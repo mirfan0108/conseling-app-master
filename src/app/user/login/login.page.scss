@@ -1,0 +1,99 @@
+// .login-content{
+//     position: relative;
+//     padding: 10%;
+// }
+.avatar-element {
+    position: relative;
+    width: 80%;
+    .btn-camera {
+        position: absolute;
+        left: 23%;
+        top: 50%;
+        font-size: 33px;
+    }
+}
+.title-login {
+    text-align: center;
+    padding: 0;
+    color: white;
+}
+.header-login {
+    position: absolute;
+    top: 0;
+    background-color: #004884;
+    color: white;
+}
+
+.bg-logins {
+    // position: relative;
+    --background: url('../../../assets/images/bg_app.png') 0 0/100% 100% no-repeat;
+}
+
+.warp-input-logins {
+    position: relative;
+    margin-top: 20%;
+    width: 80%;
+    left: 10%;
+}
+
+.img-warp{
+    width: 50%;
+    height: auto;
+}
+.footer-login {
+    position: fixed;
+    left: 16%;
+    bottom: 5%;
+    width: 65%;
+    color: white;
+    text-align: center;
+ }
+
+ .centere {
+    position: fixed;
+    left: 0;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    color: white;
+  }
+  
+  .input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+    border: 0.5px solid #8a8ad9;
+    border-radius: 5px;
+    background-color: white;
+  }
+  
+  .icon {
+    padding: 10px;
+    color: #004884;
+    min-width: 10px;
+    text-align: center;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background: none;
+    border: 0;
+    color: #004884
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #004884;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #004884;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #004884;
+  }
+  

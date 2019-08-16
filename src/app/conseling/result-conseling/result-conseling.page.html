@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="closeModal()">
+            <ion-icon name="arrow-round-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title text-center>Data Konseling</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="5">Tanggal</ion-col>
+          <ion-col size="1">:</ion-col>
+          <ion-col size="6">{{dataConseling.schedule.date}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">Nama Korban</ion-col>
+          <ion-col size="1">:</ion-col>
+          <ion-col size="6">{{dataConseling.profile.name}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5">Jenis Kekerasan</ion-col>
+          <ion-col size="1">:</ion-col>
+          <ion-col size="6">{{category}}</ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-header>
+        <ion-row justify-content-center text-center>
+          <ion-col size="3">
+            <div class="divider"></div>
+          </ion-col>
+          <ion-col size="6">
+            Hasil Konseling
+          </ion-col>
+          <ion-col size="3">
+            <div class="divider"></div>
+          </ion-col>
+        </ion-row>
+      </ion-header>
+      <ion-card-content *ngIf="dataConseling.status == 0">
+        <ion-item>
+          <ion-label position="floating" >Masukan hasil konseling</ion-label>
+          <ion-textarea rows="8" placeholder="Masukan Hasil Konseling" [(ngModel)]="dataConseling.result"></ion-textarea>
+        </ion-item>
+        <ion-row justify-content-center>
+          <ion-button expand="block" color="warning" (click)="putConseling()" disabled="{{dataConseling.result == ''}}">Simpan</ion-button>
+        </ion-row>
+      </ion-card-content>
+      <ion-card-content *ngIf="dataConseling.status == 9">
+        <p>{{dataConseling.result}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  

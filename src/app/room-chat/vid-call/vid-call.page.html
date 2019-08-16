@@ -1,0 +1,31 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>vid-call</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div #videoContainer ></div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row justify-content-center *ngIf="!incomingCall">
+    <ion-button fill="clear" (click)="endCall()">
+      <img style="max-width: 10%;" src="../../../assets/images/Reject.png">
+    </ion-button>
+    </ion-row>
+    <ion-row justify-content-center *ngIf="incomingCall">
+      <ion-col size="6">
+        <ion-button fill="clear" (click)="acceptCall()">
+          <img style="max-width: 24%;" src="../../../assets/images/Answere.png">
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button fill="clear" (click)="endCall()">
+          <img style="max-width: 24%;" src="../../../assets/images/Reject.png">
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

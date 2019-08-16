@@ -1,0 +1,64 @@
+.bg-regist {
+    // position: relative;
+    --background: url('../../../assets/images/bg_app.png') 0 0/100% 100% no-repeat;
+}
+.avatar-element {
+    position: relative;
+    width: 80%;
+    .btn-camera {
+        position: absolute;
+        left: 23%;
+        top: 50%;
+        font-size: 33px;
+    }
+}
+input, select {
+    border: 2px solid var(--ion-color-secondary, #0cd1e8)  ;
+    border-radius: 10px ;
+    padding: 5px 17px;
+    width: 80%;
+  }
+
+  * {box-sizing: border-box;}
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}

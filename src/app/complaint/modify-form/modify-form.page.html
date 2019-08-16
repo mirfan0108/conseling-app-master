@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <!-- <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="navigateTo('back')">
+        <ion-icon name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-title >
+      <ion-row justify-content-center>
+        Ubah Pengaduan
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-form-complaint">
+  
+  
+
+  <ion-card-content>
+
+    <div style="padding: 5px;">
+      <ion-label color="light">Jenis Kekerasan</ion-label>
+      <ion-item lines="none">
+        <ion-label>{{labelCategory}}</ion-label>
+        <ion-select [(ngModel)]="formComplaint.category_id" (ionChange)="selectedCategory($event)"  interface="action-sheet" placeholder="Pilih Kategori" slot="end" selectedText=" ">
+          <ion-select-option *ngFor="let category of categories" value="{{category._id}}">
+            {{category.category}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+    <div style="padding: 5px">
+      <ion-label color="light">Keterangan</ion-label>
+      <ion-item lines="none">
+        <p *ngIf="formComplaint.subyek">
+          {{formComplaint.subyek}}
+        </p>
+      </ion-item>
+    </div>
+
+    <div style="padding: 5px">
+      <ion-label color="light">Cerita yang anda alami</ion-label>
+      <ion-item lines="none">
+        <ion-textarea [(ngModel)]="formComplaint.story" rows="10" placeholder="Tuliskan cerita secara singkat"></ion-textarea>
+      </ion-item>
+    </div>
+    
+    <div style="padding: 5px">
+      <ion-button expand="block" color="warning" (click)="doPost()">
+        SIMPAN PERUBAHAN
+      </ion-button>
+    </div>
+
+  </ion-card-content>
+
+</ion-content>

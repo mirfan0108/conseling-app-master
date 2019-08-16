@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary" *ngIf="segmentValue == 'schedule'">
+    <ion-title>Penjadwalan</ion-title>
+      <ion-buttons slot="end" >
+        <ion-button (click)="openModal('setSchedule',conselings)">
+          <ion-icon src="../../assets/images/svg/calendar.svg"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary" *ngIf="segmentValue == 'conseling'">
+    <ion-title>Data Konseling</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="segmentValue">
+    <ng-template appConselingSchedule [ngSwitchCase]="'schedule'" ></ng-template>
+    <ng-template appListConseling [ngSwitchCase]="'conseling'" ></ng-template>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-segment color="warning" (ionChange)="segmentChanged($event)" [(ngModel)]="segmentValue">
+    <ion-segment-button value="chat">
+      <ion-icon src="../../assets/images/svg/chatbox.svg"></ion-icon>
+      <label style="font-size: 6px;">Konseling</label>
+    </ion-segment-button>
+    <ion-segment-button value="schedule">
+      <ion-icon src="{{segmentValue == 'schedule' ? '../../assets/images/svg/calendar-active.svg' : '../../assets/images/svg/calendar.svg'}}"></ion-icon>
+      <label style="font-size: 6px;">Jadwal</label>
+    </ion-segment-button>
+    <ion-segment-button value="conseling" >
+      <ion-icon src="{{segmentValue == 'conseling' ? '../../assets/images/svg/folder-active.svg':'../../assets/images/svg/folder.svg'}}"></ion-icon>
+      <label style="font-size: 6px;">Data Konseling</label>
+    </ion-segment-button>
+    <ion-segment-button (click)="logoutConfirm()" value="logout">
+      <ion-icon src="../../assets/images/svg/close.svg"></ion-icon>
+      <label style="font-size: 6px;">Keluar</label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-footer>

@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar mode="md" color="primary">
+      <ion-row justify-content-center>
+        <ion-col size="1" align-self-start>
+          <ion-buttons>
+            <ion-button  fill="clear" slots="icon-only" (click)="closeModal()">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col align-self-start>
+          <ion-title mode="md" style="margin-top:1%">Pengaturan Jadwal</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-calendar  [format]="'YYYY-MM-DD'" (click)="checkSchedules()"  [(ngModel)]="formSchedule.date">
+    </ion-calendar>
+    <ion-item-divider></ion-item-divider>
+  
+    <ion-card-content>
+      <div style="padding: 5px">
+        <ion-label>Nama Konselor</ion-label><br>
+        <input type="text" [(ngModel)]="detail.profile_conselor.name" disabled>
+      </div>
+      <!-- <div style="padding: 5px">
+        <ion-label>Jenis Konseling</ion-label><br>
+        <select [(ngModel)]="formConseling.option">
+          <option selected disabled value="">Pilih Jenis Konsultasi</option>
+          <option value="off">Offline</option>
+          <option value="on">Online</option>
+        </select>
+      </div> -->
+      <div style="padding: 5px">
+        <ion-label>Waktu Konseling</ion-label><br>
+        <select [(ngModel)]="formSchedule.time">
+          <option selected disabled value="">Pilih Waktu Konsultasi</option>
+          <option value="off" *ngFor="let time of times" value="{{time.time}}" >{{time.text}}</option>
+        </select>
+      </div>
+      <div style="padding: 5px">
+        <ion-label>Metode Konseling</ion-label><br>
+        <select  [(ngModel)]="formConseling.methode">
+          <option selected disabled value="">Pilih Metode Konsultasi</option>
+          <option value="Chat">Chat</option>
+          <option value="Telepon">Telepon</option>
+          <option value="Vidcall">Video Call</option>
+          <!-- <option value="Phone">Telpon</option> -->
+        </select>
+      </div>
+  
+      <div style="padding: 5px">
+        <ion-button expand="block" color="warning" (click)="doPost()">Simpan</ion-button>
+      </div>
+    </ion-card-content>
+  
+  </ion-content>
+  

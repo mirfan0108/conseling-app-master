@@ -1,0 +1,35 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>list-conseling</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+<div *ngIf="conseling.length == 0">
+  <ion-row justify-content-center margin>
+    Anda belum melakukan konseling
+  </ion-row>
+</div>
+<div *ngIf="conseling.length > 0">
+  <ion-row *ngFor="let consel of conseling">
+    <div style="width: 100%">
+        <ion-item lines="none">
+          <ion-avatar>
+            <img src="{{consel.profile.avatar}}">
+          </ion-avatar>
+          <ion-label margin>
+            {{consel.profile.name}}
+          </ion-label>
+          <ion-note slot="end" style="font-size: 12pt;">{{consel.schedule.date}}</ion-note>
+        </ion-item>
+        <ion-row justify-content-end>
+          <p style="margin-right: 8%" *ngIf="consel.status != 9"><i style="font-size: 9pt">Konselor belum memberikan hasil</i></p>
+          <ion-button color="warning" size="small" (click)="openResult(consel)" disabled="{{consel.status != 9}}">Lihat Hasil</ion-button>
+          
+        </ion-row>
+        <div class="divider"></div>
+    </div>
+  </ion-row>
+</div>

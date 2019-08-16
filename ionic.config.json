@@ -1,0 +1,7 @@
+{
+  "name": "conseling-app-master",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

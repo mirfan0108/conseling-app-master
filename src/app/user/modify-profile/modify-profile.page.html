@@ -1,0 +1,83 @@
+
+<ion-content class="bg-regist">
+    <ion-row>
+      <ion-col size="4">
+        <!-- <ion-button color="light" fill="clear" (click)="navigateTo('login')">
+          <ion-icon name="arrow-back" ></ion-icon>
+        </ion-button> -->
+      </ion-col>
+      <ion-col size="5">
+        <ion-card-content>
+          <b style="color: white">Ubah Data Diri</b>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+    <div class="regist-content">
+      <ion-card-content padding>
+        <ion-item hidden>
+          <input id="input-avatar" type="file"  (change)="changeListener($event)">
+        </ion-item>
+        <ion-item hidden>
+          <input id="input-ktp" type="file"  (change)="changeListenerKtp($event)">
+        </ion-item>
+        <label style="margin-left: 12%; color: white">Nama Pengguna</label>
+        <div style="margin: 5px;" align="center">
+          <input type="text" placeholder="Nama Lengkap" [(ngModel)]="formUpdate.name">
+        </div>
+  
+        <label style="margin-left: 12%; color: white">Tanggal Lahir</label>
+        <div style="margin: 5px;" align="center">
+          <input type="text" placeholder="Tanggal Lahir" onkeydown="return false" onkeyup="return false" [(ngModel)]="bod" (click)="openCalendar()">
+        </div>
+        
+        <label style="margin-left: 12%; color: white">Jenis Kelamin</label>
+        <div style="margin: 5px;" align="center">
+          <select  [(ngModel)]="formUpdate.gender">
+            <option selected disabled value="">Pilih Jenis Kelamin</option>
+            <option value="women">Wanita</option>
+            <option value="men">Pria</option>
+          </select>
+        </div>
+  
+        <label style="margin-left: 12%; color: white">Nomor Telepon</label>
+        <div style="margin: 5px;" align="center">
+          <input type="number" placeholder="Nomor Hp" [(ngModel)]="formUpdate.hp">
+        </div>
+  
+        <label style="margin-left: 12%; color: white">Alamat</label>
+        <div style="margin: 5px;" align="center">
+          <input type="text" placeholder="Alamat" [(ngModel)]="formUpdate.address">
+        </div>
+  
+        <label style="margin-left: 12%; color: white">Kartu Tanda Pengenal</label>
+        <div style="margin: 5px;" align="center">
+          <input type="text" placeholder="ktp.jpg" [(ngModel)]="ktpName" onkeydown="return false" onkeyup="return false" (click)="doInputFile('ktp')">
+        </div>
+  
+        <label style="margin-left: 12%; color: white">Foto Profil</label>
+        <div style="margin: 5px;" align="center">
+          <input type="text" placeholder="profile.jpg" [(ngModel)]="fotoName" (click)="doInputFile('foto')" >
+        </div>
+        <div style="margin: 5px;" hidden>
+          <ion-item>
+            <ion-label ><ion-icon name="calendar"></ion-icon></ion-label>
+            <ion-datetime id="cal-hide" (ionChange)="normalizeDate()" [(ngModel)]="formUpdate.birth" placeholder="Tanggal Lahir" display-format="MM-DD-YYYY"></ion-datetime>
+          </ion-item>
+        </div>
+        <ion-row>
+         <ion-col size="1"></ion-col>
+         <ion-col size="10">
+            <ion-button expand="block" color="warning" (click)="doUpdate()" 
+        disabled="{{formUpdate.email == '' || formUpdate.name == '' 
+        || formUpdate.hp == '' || formUpdate.address == '' || formUpdate.password == ''
+        || formUpdate.password != formUpdate.confirmPassword}}">SIMPAN</ion-button>
+         </ion-col>
+         <ion-col size="1"></ion-col>
+       </ion-row>
+  
+  
+      </ion-card-content>
+      
+    </div>
+  </ion-content>
+  

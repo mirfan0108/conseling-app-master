@@ -1,0 +1,77 @@
+.bg-regist {
+    // position: relative;
+    --background: url('../../../assets/images/bg_app.png') 0 0/100% 100% no-repeat;
+}
+.avatar-element {
+    position: relative;
+    width: 80%;
+    .btn-camera {
+        position: absolute;
+        left: 23%;
+        top: 50%;
+        font-size: 33px;
+    }
+}
+input, select {
+    border: 1px solid var(--ion-color-primary, #0cd1e8)  ;
+    border-radius: 10px ;
+    padding: 5px 17px;
+    width: 80%;
+  }
+
+  // * {box-sizing: border-box;}
+
+/* Style the input container */
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 80%;
+  margin-bottom: 5px;
+  border: 0.5px solid #8a8ad9;
+  border-radius: 10px ;
+  background-color: white;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 5px;
+    padding-right: 10px;
+    color: #4a29dd;
+    min-width: 20px;
+    max-width: 25px;
+    text-align: right;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  
+  width: 100%;
+    padding: 6px;
+    outline: none;
+    background: none;
+    border: 0;
+
+}
+
+// .input-field:focus {
+//   border: 2px solid dodgerblue;
+// }
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+// .btn:hover {
+//   opacity: 1;
+// }
+

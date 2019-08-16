@@ -1,0 +1,110 @@
+
+<ion-content class="bg-regist">
+  <ion-row>
+    <ion-col size="4">
+      <ion-button color="light" fill="clear" (click)="navigateTo('login')">
+        <ion-icon name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="5">
+      <ion-card-content>
+        <b style="color: white">Buat Akun Baru</b>
+      </ion-card-content>
+    </ion-col>
+  </ion-row>
+  <div class="regist-content">
+    <ion-card-content padding>
+      <ion-item hidden>
+        <input id="input-avatar" type="file"  (change)="changeListener($event)">
+      </ion-item>
+      <ion-item hidden>
+        <input id="input-ktp" type="file"  (change)="changeListenerKtp($event)">
+      </ion-item>
+      <label style="margin-left: 12%; color: white">Nama Pengguna</label>
+      <div style="margin: 5px;" align="center">
+        <input type="text" placeholder="Nama Lengkap" [(ngModel)]="formRegist.name">
+      </div>
+
+      <label style="margin-left: 12%; color: white">Email</label>
+      <div style="margin: 5px;" align="center">
+        <input type="email" placeholder="Email" [(ngModel)]="formRegist.email">
+      </div>
+
+      <label style="margin-left: 12%; color: white">Kata Sandi</label>
+      <div style="margin: 5px;" align="center">
+        <input type="password" placeholder="Kata Sandi" [(ngModel)]="formRegist.password">
+      </div>
+
+      <label style="margin-left: 12%; color: white">Tanggal Lahir</label>
+      <div style="margin: 5px;" align="center">
+        <input type="text" placeholder="Tanggal Lahir" onkeydown="return false" onkeyup="return false" [(ngModel)]="bod" (click)="openCalendar()">
+      </div>
+      
+      <label style="margin-left: 12%; color: white">Jenis Kelamin</label>
+      <div style="margin: 5px;" align="center">
+        <select  [(ngModel)]="formRegist.gender">
+          <option selected disabled value="">Pilih Jenis Kelamin</option>
+          <option value="women">Wanita</option>
+          <option value="men">Pria</option>
+        </select>
+      </div>
+
+      <!-- <label style="margin-left: 12%; color: white">Nomor Telepon</label>
+      <div style="margin: 5px;" align="center">
+        <input type="number" placeholder="Nomor Hp" [(ngModel)]="formRegist.hp">
+      </div> -->
+
+      <!-- <label style="margin-left: 12%; color: white">Alamat</label>
+      <div style="margin: 5px;" align="center">
+        <input type="text" placeholder="Alamat" [(ngModel)]="formRegist.address">
+      </div> -->
+
+      <label style="margin-left: 12%; color: white">Kartu Tanda Pengenal</label>
+      <div style="margin: 5px;" align="center">
+        <div class="input-container">
+          <input class="input-field" type="text" placeholder="Kartu Tanda Pengenal" [(ngModel)]="ktpName" onkeydown="return false" onkeyup="return false" (click)="doInputFile('ktp')">
+          <i class="icon">
+            <img src="../../../assets/images/Dokumen.png" width="10">
+          </i>
+        </div>
+      </div>
+
+      <label style="margin-left: 12%; color: white">Foto Profil</label>
+      <div style="margin: 5px;" align="center">
+        <div class="input-container">
+          <input type="text" class="input-field" placeholder="Foto Profil" [(ngModel)]="fotoName" (click)="doInputFile('foto')" >
+          <i class="icon">
+              <img src="../../../assets/images/Dokumen.png" width="10">
+            </i>
+        </div>
+      </div>
+
+      
+
+      <!-- <label style="margin-left: 12%; color: white">Ulang Kata Sandi</label>
+      <div style="margin: 5px;" align="center">
+        <input placeholder="Konfirmasi Kata Sandi" type="password" [(ngModel)]="formRegist.confirmPassword">
+      </div> -->
+      <div style="margin: 5px;" hidden>
+        <ion-item>
+          <ion-label ><ion-icon name="calendar"></ion-icon></ion-label>
+          <ion-datetime id="cal-hide" (ionChange)="normalizeDate()" [(ngModel)]="formRegist.birth" placeholder="Tanggal Lahir" display-format="MM-DD-YYYY"></ion-datetime>
+        </ion-item>
+      </div>
+      <ion-row>
+       <ion-col size="1"></ion-col>
+       <ion-col size="10">
+         <div style="margin-top: 40px">
+
+           <ion-button expand="block" color="warning" (click)="informed()" 
+       disabled="{{formRegist.email == '' || formRegist.name == ''  || formRegist.password == ''}}">Simpan</ion-button>
+         </div>
+       </ion-col>
+       <ion-col size="1"></ion-col>
+     </ion-row>
+
+
+    </ion-card-content>
+    
+  </div>
+</ion-content>

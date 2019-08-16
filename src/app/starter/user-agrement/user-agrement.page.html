@@ -1,0 +1,56 @@
+
+
+<ion-content class="bg-ua">
+
+  <ion-row padding>
+    <ion-col size="2" >
+      <ion-button (click)="openSwall()" fill="clear">
+        <ion-icon name="arrow-back" color="light"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="8">
+     <i style="font-family: primaryBold;
+     margin-top: 17px;
+     color: white;
+     position: relative;
+     top: 10px;">Informed Consent</i>
+    </ion-col>
+  </ion-row>
+  <ion-row justify-content-center>
+    <p style="text-align: center; color: white; font-family: primaryBold;">
+      Sebelum anda melakukan konseling, Anda perlu menyetujui beberapa hal dibawah ini:
+    </p>
+  </ion-row>
+  <div>
+
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-label color="secondary">SETUJU dan BERSEDIA</ion-label>
+      </ion-card-header>
+      <ion-card-content>
+        Untuk terlibat dan berpartisipasi aktif sebagai peserta konseling individu dari awal sampai akhir proses konseling.
+         Dalam kegiatan ini saya menyadari, memahami dan menerima bahwa:
+         <ul>
+           <li>
+             Saya bersedia terlibat penuh dan aktif selama proses konseling berlangsung.
+           </li>
+           <li>
+             Saya diminta untuk memberikan informasi yang sejujurnya berkaitan dengan masalah yang saya hadapi.
+           </li>
+           <li>
+             Identitas dan informasi yang saya berikan tidak akan disampaikan terbuka kepada umum.
+           </li>
+           <li>
+             Saya menyetujui adanya perekaman proses konseling berupa tulisan, rekaman, percakapan dan dokumen lainnya selama proses konseling berlangsung dengan jaminan informasi pribadi saya
+           </li>
+         </ul>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-row justify-content-center>
+    <ion-col size="8"></ion-col>
+    <ion-col size="4">
+      <ion-button color="warning" expand="block" (click)="iAgree()">Setuju</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

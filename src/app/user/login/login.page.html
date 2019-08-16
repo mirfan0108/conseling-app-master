@@ -1,0 +1,44 @@
+
+<ion-content class="bg-logins">
+    
+  <div class="centere">
+    <img [src]="logo" alt="LOGO" style="width: 200px; height: auto;">
+    <ion-row justify-content-center>
+      <p style="font-size: 12pt;
+      padding-left: 15%;
+      padding-right: 15%;">
+        Aplikasi Pengaduan dan Konseling MCR PKBI Bandung
+      </p>
+    </ion-row>
+  </div>
+
+  <div class="warp-input-logins footer-login" >
+    <div class="input-container">
+      <i class="icon">
+        <ion-icon name="mail"></ion-icon>
+      </i>
+      <input class="input-field" [(ngModel)]="formLogin.email" type="text" placeholder="Email" >
+    </div>
+    <div class="input-container">
+      <i class="icon">
+        <ion-icon name="ios-lock"></ion-icon>
+      </i>
+      <input class="input-field" [(ngModel)]="formLogin.password" type="password" placeholder="Kata Sandi" >
+    </div>
+    <div style="margin-top: 5px; text-align: right">
+      <a href="javascript:void(0)" (click)="navigateTo('forget')" style="color:white"><small style="color:white">Lupa kata sandi?</small></a>
+      <div style="margin-top: 25px;">
+        <ion-button expand="block" color="warning" (click)="doLogin()" 
+        disabled="{{formLogin.password == '' || formLogin.username == ''}}">
+          Masuk
+          <ion-spinner name="crescent" style="margin-left: 10px;" *ngIf="loading"></ion-spinner>
+        </ion-button>
+      </div>
+
+      <ion-row justify-content-center>
+        <small style="color: white; margin-top: 35px;margin-bottom: 15px;">Belum punya Akun? <a href="javascript:void(0)" style="color: white" (click)="navigateTo('signup')">Buat Akun Baru</a></small>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>
+

@@ -1,0 +1,59 @@
+
+<ion-card-content>
+  <div *ngIf="scheduler">
+    <!-- <ion-card-header>
+      <ion-card-title>
+        {{mon}} {{year}}
+      </ion-card-title>
+    </ion-card-header> -->
+    <ion-card-content padding margin>
+      
+      <ion-row justify-content-center>
+        <div id="circle">
+          <!-- <p *ngIf="scheduler.status == 1" style="text-align: center;
+          position: relative;
+          top: 40%;
+          width: 62%;
+          left: 18%;">
+            Silahkan Atur Jadwal Terlebih Dahulu <br>
+            <a href="javascript:void(0)" style="color: white" (click)="openModal()"><b>Buat Jadwal</b></a>
+          </p> -->
+  
+          <p *ngIf="scheduler.status == 0" style="text-align: center;
+          position: relative;
+          top: 16%;
+          width: 62%;
+          left: 18%;">
+            {{day}}, {{scheduler.date}}<br> {{scheduler.time}}
+          </p>
+          <p *ngIf="scheduler.status == 0 " style="text-align: center;
+          position: relative;
+          top: 30%;
+          width: 62%;
+          font-size: 16pt;
+          left: 18%;">{{methode}}
+            <!-- KONSELING <br> {{dataComplaint.profile_conselor.name}} <br> -->
+          </p>
+          <p style="position: relative;    top: 42%;
+          text-align: center;" *ngIf="scheduler.status == 0 ">
+            KONSELING <br> {{dataComplaint.profile_conselor.name}} 
+          </p>
+        </div>
+      </ion-row>
+    </ion-card-content>
+  </div>
+  <div *ngIf="!scheduler">
+    <ion-row justify-content-center>
+      <div id="circle">
+        <p style="text-align: center;
+          position: relative;
+          top: 40%;
+          width: 62%;
+          left: 18%;">
+            Silahkan Atur Jadwal Terlebih Dahulu <br>
+            <a href="javascript:void(0)" style="color: white" (click)="openModal('setSchedule',scheduler)"><b>Buat Jadwal</b></a>
+          </p>
+      </div>
+    </ion-row>
+  </div>
+</ion-card-content>

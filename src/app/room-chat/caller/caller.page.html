@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-row justify-content-center>
+      <ion-col size="1">
+        <ion-button fill="clear" (click)="closeCall()">
+          <ion-icon name="arrow-back" color="light"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9" text-center>
+        <label style="position: absolute;
+        top: 19px;
+        left: 40%;">TELEPON</label>
+      </ion-col>
+      <ion-col size="2">
+        <img src="{{fromUser.name}}" style="width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        right: 10px;">
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <ion-card-header color="primary">
+    <ion-card-title text-center>{{toUser.name}}</ion-card-title>
+    <ion-card-subtitle text-center>Menghubungkan</ion-card-subtitle>
+  </ion-card-header>
+</ion-header>
+
+<ion-content class="bg-ua">
+    <div #videoContainer></div>
+  <!-- <audio src="../../../assets/soundfx.mp3" *ngIf="ringin"></audio> -->
+
+  <div class="warp-ava">
+    <div class="ava-img">
+      <img src="{{toUser.avatar}}">
+    </div>
+  </div>
+
+  <ion-row justify-content-center>
+    <ion-label (click)="closeCall()">
+      <img src="../../../assets/images/Reject.png" style="    position: absolute;
+      width: 50px;
+      top: 75%;
+      left: 43%;">
+    </ion-label>
+  </ion-row>
+
+  <!-- <ion-list>
+      <ion-item>
+          <ion-label floating>Call ID:</ion-label>
+          <ion-input type="text" [(ngModel)]="calleeId"></ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-grid>
+      <ion-row>
+          <ion-col>
+              <button  ion-button block (click)='MakeCall(calleeId)'>Call</button>
+          </ion-col>
+          <ion-col>
+              <button *ngIf="showHangup" ion-button block color="danger" (click)='HangUp()'>Hangup</button>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <button *ngIf="showAnswer" ion-button block color="secondary" (click)='AnswerCall(incomingCallId)'>Answer</button>
+          </ion-col>
+          <ion-col>
+              <button *ngIf="showReject" ion-button block color="danger">Reject</button>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <p *ngIf="showStatus" [innerHtml]="status"></p>
+          </ion-col>
+      </ion-row>
+      <ion-row *ngIf="showRemoteVideo">
+          <ion-col>
+              <p>Remote Stream</p>
+              <div id="remote" style="width:100%;"></div>
+          </ion-col>
+      </ion-row>
+      <ion-row *ngIf="showMyVideo">
+          <ion-col>
+              <p>My Stream</p>
+              <div id="mini"></div>
+          </ion-col>
+      </ion-row>
+  </ion-grid> -->
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="setVolume()">
+          <ion-icon color="light" name="volume-off" *ngIf="volumeOff" style="font-size: 25pt;"></ion-icon>
+        <img src="../../../assets/images/Sound.png" style="width: 30px;" *ngIf="!volumeOff">
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons justify-content-center>
+      <ion-button fill="clear">
+        <img src="../../../assets/images/Video Call.png" style="width: 30px;">
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="setMic()">
+        <ion-icon color="light" name="mic-off" style="font-size: 25pt;" *ngIf="micOff"></ion-icon>
+        <img src="../../../assets/images/Pesan Suara.png" style="width: 23px; margin-right: 10px;" *ngIf="!micOff">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-row justify-content-center>
+        Verifikasi
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+  <ion-card-content>
+    <ion-row justify-content-center>
+      <ion-label color="primary"><b>Menunggu verifikasi dari konselor</b></ion-label>
+    </ion-row>
+  </ion-card-content>
+  <div class="footer-status">
+    <ion-card-content>
+      <p>
+      <ion-note>
+        Hasil Verifikasi akan dikirimkan melalui email Anda Maksimal 30 menit setelah Anda melakukan pengaduan
+      </ion-note>
+    </p>
+    <br><br>
+    <p>
+      <ion-note>
+        Apabila pengaduan Anda disetujui, Anda dapat memilih jadwal untuk memulai konseling, apabila pengaduan Anda belum dapat disetuji, silahkan ikuti catatan yang kami kirimkan kepada Anda.
+      </ion-note>
+    </p>
+    </ion-card-content>
+  </div>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-row justify-content-center>
+      <ion-col size="1">
+        <!-- <ion-button fill="clear">
+          <ion-icon name="arrow-back" color="light"></ion-icon>
+        </ion-button> -->
+      </ion-col>
+      <ion-col size="9" text-center>
+        <label style="position: absolute;
+        left: 40%;">TELEPON</label>
+      </ion-col>
+      <ion-col size="2">
+        <img src="{{toUser.avatar}}" style="width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: absolute;
+        top: 1px;
+        right: 10px;">
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <ion-card-header color="primary">
+    <ion-card-title text-center>{{fromUser.name}}</ion-card-title>
+    <ion-card-subtitle text-center>Panggilan Masuk</ion-card-subtitle>
+  </ion-card-header>
+</ion-header>
+
+<ion-content class="bg-ua">
+  <div class="warp-ava">
+    <div class="ava-img">
+      <img src="{{fromUser.avatar}}">
+    </div>
+  </div>
+
+  
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-row justify-content-center>
+    <ion-col size="6">
+      <ion-button fill="clear" expand="block" (click)="answare()">
+        <img src="../../../assets/images/Answere.png" style="width: 36px;
+        position: absolute;">
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button fill="clear" expand="block" (click)="decline()">
+        <img src="../../../assets/images/Reject.png" style="width: 36px;
+        position: absolute;">
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  </ion-toolbar>
+</ion-footer>

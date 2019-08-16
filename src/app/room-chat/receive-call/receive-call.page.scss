@@ -1,0 +1,22 @@
+.bg-ua {
+    --background: url('../../../assets/images/caller-bg.png') 0 0/100% 100% no-repeat;
+}
+
+.ava-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    padding: 10px;
+    background-image: linear-gradient(to right top, #b1e798, #90e6b4, #7be1cc, #7bdadd, #8bd1e4);
+    img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+      }
+}
+
+.warp-ava {
+    position: fixed;
+    top: 30%;
+    left: 20%;
+}
